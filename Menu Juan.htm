@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Menu Juan</title>
+	<link rel="shortcut icon" href="EJERCICIO HTML/PlayStation-Logo.png" type="PlayStation-Logo/favicon.ico">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun- scale=1.0">
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates|Poppins&display=swap');
+
+
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: 'Montserrat Alternates', sans-serif;
+		}
+
+		body {
+			background: url(https://images6.alphacoders.com/447/thumb-1920-447556.png);
+			background-size: 100vw 100vh;
+			background-repeat: no-repeat;
+		}
+
+		.capa {
+			position: fixed;
+			width: 100%;
+			height: 100vh;
+			background: rgba(0, 0, 0, 0.6);
+			z-index: -1;
+			top: 0;
+			left: 0;
+		}
+
+		/*Estilos para el encabezado*/
+		.img {
+			float: left;
+		}
+
+		.header {
+			width: 100%;
+			height: 100px;
+			position: fixed;
+			top: 0;
+			left: 0;
+		}
+
+		.container {
+			width: 90%;
+			max-width: 1200px;
+			margin: auto;
+		}
+
+		.container .btn-menu,
+		.logo {
+			float: left;
+			line-height: 100px;
+		}
+
+		.container .btn-menu label {
+			color: #fff;
+			font-size: 25px;
+			cursor: pointer;
+		}
+
+		.logo h1 {
+			color: #fff;
+			font-weight: 400;
+			font-size: 22px;
+			margin-left: 10px;
+		}
+
+		.container .menu {
+			float: right;
+			line-height: 100px;
+		}
+
+		.container .menu a {
+			display: inline-block;
+			padding: 15px;
+			line-height: normal;
+			text-decoration: none;
+			color: #fff;
+			transition: all 0.3s ease;
+			border-bottom: 2px solid transparent;
+			font-size: 15px;
+			margin-right: 20px;
+		}
+
+		.container .menu a:hover {
+			border-bottom: 2px solid #c7c7c7;
+			padding-bottom: 5px;
+		}
+
+		/*Fin de Estilos para el encabezado*/
+
+		/*Menù lateral*/
+		#btn-menu {
+			display: none;
+		}
+
+		.container-menu {
+			position: absolute;
+			background: rgba(0, 0, 0, 0.5);
+			width: 100%;
+			height: 100vh;
+			top: 0;
+			left: 0;
+			transition: all 500ms ease;
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		#btn-menu:checked~.container-menu {
+			opacity: 1;
+			visibility: visible;
+		}
+
+		.cont-menu {
+			width: 100%;
+			max-width: 250px;
+			background: #08001b;
+			height: 100vh;
+			position: relative;
+			transition: all 500ms ease;
+			transform: translateX(-100%);
+		}
+
+		#btn-menu:checked~.container-menu .cont-menu {
+			transform: translateX(0%);
+		}
+
+		.cont-menu nav {
+			transform: translateY(15%);
+		}
+
+		.cont-menu nav a {
+			display: block;
+			text-decoration: none;
+			padding: 20px;
+			color: #c7c7c7;
+			border-left: 5px solid transparent;
+			transition: all 400ms ease;
+		}
+
+		.cont-menu nav a:hover {
+			border-left: 5px solid #c7c7c7;
+			background: #585858;
+		}
+
+		.cont-menu label {
+			position: absolute;
+			right: 5px;
+			top: 10px;
+			color: #fff;
+			cursor: pointer;
+			font-size: 18px;
+		}
+
+		/*Fin de Menù lateral*/
+	</style>
+</head>
+
+<body>
+	<header class="header">
+		<div class="container">
+			<div class="btn-menu">
+				<label for="btn-menu">☰</label>
+			</div>
+			<div class="logo">
+				<h1>Play Station</h1>
+				<img class="img" src="EJERCICIO HTML/IMG.jpg	" >
+			</div>
+			<nav class="menu">
+				<a href="#">Inicio</a>
+				<a href="#">Comprar</a>
+				<a href="#">Ayuda</a>
+				<a href="#">Configuración</a>
+			</nav>
+		</div>
+	</header>
+	<div class="capa"></div>
+
+	<input type="checkbox" id="btn-menu">
+	<div class="container-menu">
+		<div class="cont-menu">
+			<nav>
+				<a href="#">Juegos</a>
+				<a href="#">Play Station Plus</a>
+				<a href="#">Promociones</a>
+				<a href="#">Proximos lanzamientos</a>
+				<a href="#">Mas Jugados</a>
+				<a href="#">Compras Virtuales</a>
+			</nav>
+			<label for="btn-menu">✖️</label>
+		</div>
+	</div>
+</body>
+
+</html>
